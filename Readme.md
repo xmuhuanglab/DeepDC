@@ -1,4 +1,6 @@
 # The design philosophy of DeepDC
+![workflow](imag/workflow.png)
+
 DeepDC, developed by Jialiang Huang's Lab at Xiamen University (XMU) and Teng Fei's Lab at Dongbei University (DBU), is a deep learning-based computational model designed to predict dual-editing efficiency in non-coding regions. It combines a HyenaDNA block and XGBoost to extract epigenomic features and sequence information from each paired sgRNA and predicts editing efficiency.
 
 ## Contact us
