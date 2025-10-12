@@ -5,7 +5,8 @@ DeepDC, developed by Jialiang Huang's Lab at Xiamen University (XMU) and Teng Fe
 
 ## Contact us
 If you have any further questions or encounter any issues, please feel free to contact us:
-- [Feng Chen: sukhoeing@163.com](mailto:sukhoeing@163.com)
 - [Liquan Lin: 21620241153548@stu.xmu.edu.cn](mailto:21620241153548@stu.xmu.edu.cn)
 - [Shijie Luo: 24520230157443@xmu.edu.cn](mailto:24520230157443@xmu.edu.cn)
 - [Jialiang Huang: jhuang@xmu.edu.cn](mailto:jhuang@xmu.edu.cn)
+- [Han Zhang]
+- [Teng Fei: 21620241153548@stu.xmu.edu.cn](mailto:feiteng@mail.neu.edu.cn)
