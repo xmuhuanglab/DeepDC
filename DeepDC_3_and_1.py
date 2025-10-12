@@ -16,11 +16,9 @@ trans_base_dict={'A':'T','C':'G','G':'C','T':'A','N':'N'}
 chr_list = [f'chr{i}' for i in range(1,23)]+['chrX']
 
 def reverse_DNA(seq):
-    ### 用于反转DNA
     return ''.join([trans_base_dict[c] for c in seq])[::-1]
 
 def gc_content(seq_list):
-    ### 计算GC含量
     content = []
     for seq in seq_list:
         if len(seq)==0:
@@ -30,9 +28,6 @@ def gc_content(seq_list):
     return content
 
 def find_contextual_single(data,fa=None,col_name = 'sequence',expand_flank=30,upstream=4,downstream=6):
-    
-    # 自动寻找上下文并且把补全上下文之后的序列整理成有30bp的格式
-    ## 因为参考基因组并不会随着细胞系的改变而改变，所以这里可以这么做
 
     p1,p2=[],[];e1,e2=[],[]
     adj_s1,adj_s2=[],[]
@@ -40,7 +35,7 @@ def find_contextual_single(data,fa=None,col_name = 'sequence',expand_flank=30,up
     
     for _,row in merge_table.iterrows():
     
-        s1 = row[col_name].upper().replace(' ','') # 因为输出是ChopChop的,非常稳定，就是20 bp protospacer + 3 bp PAM
+        s1 = row[col_name].upper().replace(' ','')
 
         try:
             c,s,e = row['chr'],int(row['start']),int(row['end'])
@@ -55,7 +50,7 @@ def find_contextual_single(data,fa=None,col_name = 'sequence',expand_flank=30,up
 
         l1=sequence.find(s1)
 
-        if l1<0: # 没有抓取到位置信息的情况,自动认为是负向的
+        if l1<0:
             l1=sequence.find(reverse_DNA(s1))
             p1.append('0');e1.append( reverse_DNA( fa[c][s-expand_flank+l1-downstream:s-expand_flank+l1+23+upstream].seq.upper() ) )
         else:
@@ -110,9 +105,7 @@ def gain_series_TPM(data,epi='DNase',cellline='A549',genome='hg38',lo=None):
     return epi_value_series
 
 def generate_random_string(length=8):
-    # 定义字符集：大小写字母 + 数字
     characters = string.ascii_letters + string.digits
-    # 生成随机字符串
     random_string = ''.join(secrets.choice(characters) for _ in range(length))
     return random_string
 
@@ -192,8 +185,6 @@ else:
     os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
     
 import sys
-#if not '/cluster2/huanglab/liquan/pycode/dual/20250306_demo' in sys.path:
-#    sys.path.append('/cluster2/huanglab/liquan/pycode/dual/20250306_demo')
 import DeepSpCas9_main as DeepSpCas9
 import DeepCRISPR_main as DeepCRISPR
 import DistillatedRuleSet2 as Ruleset2
@@ -271,8 +262,6 @@ try:
     pair_df_filtered['H3K4me3']=gain_series_TPM( pair_df_filtered, epi='H3K4me3', cellline=parser.parse_args().cellline, genome=parser.parse_args().genome, lo=None)      
 except:
     assert 1==0, 'Error in epigenetic feature capture'
-    
-#pair_df_filtered.to_csv(f'{parser.parse_args().oc}result.score.tsv',sep='\t',index=False)
 
 xgb_model = xgb.XGBRegressor()
 xgb_model.load_model('./xgboost_model.model')
@@ -283,7 +272,6 @@ ipdata['DeepCRISPR_harmony'] = 1/(1/(ipdata['DeepCRISPR_s1']+1)+1/(ipdata['DeepC
 ipdata['CRISPRedict_harmony']= 1/(1/(ipdata['CRISPRedit_s1']+1)+1/(ipdata['CRISPRedit_s2']+1))
 ipdata['Ruleset2_harmony']   = 1/(1/(ipdata['Ruleset2_s1']+1)+1/(ipdata['Ruleset2_s2']+1))
 ipdata = ipdata.sort_values(by=['DeepSpCas9_harmony','DeepCRISPR_harmony','CRISPRedict_harmony','Ruleset2_harmony','DNase','ATAC','H3K27ac','H3K4me3'],ascending=False)
-#ipdata = ipdata.iloc[:30]
 ipdata['hyena_score']=np.array([Hyena.hyena_inference(s[:16384]) for s in list(ipdata['Median_sequence'].fillna('N'))])
 ipdata = ipdata.fillna(0.0)
 
