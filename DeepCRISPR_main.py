@@ -2,7 +2,6 @@ import os
 
 import tensorflow as tf
 import sonnet as snt
-#import tensorflow.contrib.slim as slim
 import tf_slim as slim
 
 import pandas as pd
@@ -52,11 +51,8 @@ def predict_sequence(sequences, model_path='/cluster2/huanglab/liquan/pycode/dua
     tf.reset_default_graph()
     sess = tf.InteractiveSession()
 
-    ### 规定模型输入路径
     on_target_model_dir = model_path
-    ### 载入模型
     dcmodel = dc.DCModelOntar(sess, on_target_model_dir, is_reg=True, seq_feature_only=True)
-    ### 预测
     sequences = process(sequences)
     score = dcmodel.ontar_predict(sequences)
     
@@ -67,9 +63,7 @@ def build_source_model(model_path='/cluster2/huanglab/liquan/pycode/dual/2025030
     sess = tf.InteractiveSession()
     tf.disable_v2_behavior()
 
-    ### 规定模型输入路径
     on_target_model_dir = model_path
-    ### 载入模型
     dcmodel = dc.DCModelOntar(sess, on_target_model_dir, is_reg=True, seq_feature_only=True)
     
     if return_session:
