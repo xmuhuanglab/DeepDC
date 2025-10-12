@@ -46,39 +46,33 @@ class DistillatedRuleSet2(nn.Module):
         return self.output(x).flatten()
     
     def fit(self, x, y, epochs=20, batch_size=256, lr=1e-5, device='cpu'):
-        # 确保输入是torch Tensor
+
         if not isinstance(x, torch.Tensor):
             x = torch.FloatTensor(x).to(device)
         if not isinstance(y, torch.Tensor):
             y = torch.FloatTensor(y).to(device)
-        
-        # 创建DataLoader
+
         dataset = TensorDataset(x, y)
         dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
-        
-        # 设置优化器和损失函数
+
         optimizer = torch.optim.Adam(self.parameters(), lr=lr)
-        criterion = nn.MSELoss()  # 如果是回归任务
-        
-        # 训练循环
+        criterion = nn.MSELoss()
+
         self.train()
         self.to(device)
         for epoch in range(epochs):
             epoch_loss = 0.0
             for batch_x, batch_y in tqdm(dataloader):
                 optimizer.zero_grad()
-                
-                # 前向传播
+
                 outputs = self(batch_x)
                 loss = criterion(outputs, batch_y)
-                
-                # 反向传播和优化
+
                 loss.backward()
                 optimizer.step()
                 
                 epoch_loss += loss.item()
-            
-            # 打印每个epoch的损失
+
             print(f'Epoch [{epoch+1}/{epochs}], Loss: {epoch_loss/len(dataloader):.4f}')
             
     def predict(self, x, batch_size=16):
