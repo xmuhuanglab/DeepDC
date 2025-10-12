@@ -259,7 +259,6 @@ class DeepSpCas9_tf2(tf.keras.Model):
         self.l_rate = l_rate
         self.length = 30
 
-        # 定义卷积层
         self.conv1 = tf.keras.layers.Conv2D(
             filters=filter_num[0],
             kernel_size=(1, filter_size[0]),
@@ -287,7 +286,6 @@ class DeepSpCas9_tf2(tf.keras.Model):
         self.pool3 = tf.keras.layers.AveragePooling2D(pool_size=(1, 2), strides=(1, 2), padding='same')
         self.dropout3 = tf.keras.layers.Dropout(0.3)
 
-        # 计算全连接层的输入大小
         layer_node_0 = int((self.length - filter_size[0]) / 2) + 1
         node_num_0 = layer_node_0 * filter_num[0]
         layer_node_1 = int((self.length - filter_size[1]) / 2) + 1
@@ -296,7 +294,6 @@ class DeepSpCas9_tf2(tf.keras.Model):
         node_num_2 = layer_node_2 * filter_num[2]
         self.node_num = node_num_0 + node_num_1 + node_num_2
 
-        # 定义全连接层
         self.flatten = tf.keras.layers.Flatten()
         self.dense1 = tf.keras.layers.Dense(node_1, activation='relu')
         self.dropout4 = tf.keras.layers.Dropout(0.3)
@@ -304,13 +301,11 @@ class DeepSpCas9_tf2(tf.keras.Model):
         self.dropout5 = tf.keras.layers.Dropout(0.3)
         self.output_layer = tf.keras.layers.Dense(1)
 
-        # 定义损失函数和优化器
         self.loss_fn = tf.keras.losses.MeanSquaredError()
         self.optimizer = tf.keras.optimizers.Adam(learning_rate=l_rate)
 
     def call(self, inputs, training=False):
-        # 假设输入形状为 (batch_size, 1, length, 4)
-        # 分别通过三个卷积层
+
         conv_out1 = self.conv1(inputs)
         pool_out1 = self.pool1(conv_out1)
         dropout_out1 = self.dropout1(pool_out1, training=training)
@@ -323,13 +318,11 @@ class DeepSpCas9_tf2(tf.keras.Model):
         pool_out3 = self.pool3(conv_out3)
         dropout_out3 = self.dropout3(pool_out3, training=training)
 
-        # 扁平化并拼接
         flatten1 = self.flatten(dropout_out1)
         flatten2 = self.flatten(dropout_out2)
         flatten3 = self.flatten(dropout_out3)
         concat = tf.concat([flatten1, flatten2, flatten3], axis=1)
 
-        # 全连接层
         dense1_out = self.dense1(concat)
         dropout4_out = self.dropout4(dense1_out, training=training)
         dense2_out = self.dense2(dropout4_out)
