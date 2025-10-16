@@ -1,0 +1,13 @@
+{
+  "PATH": {
+    "PRIMER3": "/cluster2/huanglab/liquan/pycode/dual/20250306_demo/chopchop/primer3_core",
+    "BOWTIE": "/cluster2/huanglab/liquan/pycode/dual/20250306_demo/chopchop/bowtie/bowtie",
+    "TWOBITTOFA": "/cluster2/huanglab/liquan/pycode/dual/20250306_demo/chopchop/twoBitToFa",
+    "TWOBIT_INDEX_DIR": "/cluster2/huanglab/liquan/genome_ref",
+    "BOWTIE_INDEX_DIR": "/cluster2/huanglab/liquan/genome_ref",
+    "ISOFORMS_INDEX_DIR": "/your/full/path/to/ebwt_transcriptome_folder_and_2bit_of_genome",
+    "ISOFORMS_MT_DIR": "/your/full/path/to/vienna_MT_folder",
+    "GENE_TABLE_INDEX_DIR": "/your/full/path/to/genePred_folder"
+  },
+  "THREADS": 4
+}
