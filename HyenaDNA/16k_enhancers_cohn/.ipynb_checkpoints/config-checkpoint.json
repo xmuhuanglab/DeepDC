@@ -1,0 +1,23 @@
+{
+  "d_model": 128,
+  "n_layer": 2,
+  "d_inner": 512,
+  "vocab_size": 12,
+  "resid_dropout": 0.0,
+  "embed_dropout": 0.1,
+  "fused_mlp": false,
+  "fused_dropout_add_ln": true,
+  "residual_in_fp32": true,
+  "pad_vocab_size_multiple": 8,
+"layer":{
+    "emb_dim": 5,
+    "filter_order": 64,
+    "short_filter_order": 3,
+    "l_max": 16386  ,
+    "modulate": true,
+    "w": 10,
+    "lr": 6e-4,
+    "wd": 0.0,
+    "lr_pos_emb": 0.0
+}
+}
