@@ -33,6 +33,11 @@ Here, we provide training and test demo input to showcase the DeepDC workflow:
 | chr11       | 5288000  | 5292000 |
 | chr11       | 5292000  | 5296000 |
 
+### Download data
+```bash
+bash download_references.sh
+```
+
 ### Preparation of input (Feature processing)
 ```bash
 DataProcess.ipynb
@@ -44,15 +49,15 @@ This Jupyter notebook is used to collect information related to the target fragm
 4. gRNA Efficiency: Predicted by DeepCpf1, DeepCRISPR, CRISPRedit, and Ruleset2.
 5. Fragment Score: Calculated using the HyenaDNA scoring system.
 
+### For training and scoring
+```bash
+Training.ipynb Prediction.ipynb
+```
+
 ### Batch design using scripts
 ```bash
 python DeepDC_3_and_1_w.py --oc ./result/test1/ --region chr11:5290000-5292000 --genome hg38 --cellline K562
 python DeepDC_3_and_1_b.py --oc ./result/test2/ --region data/test.bed --genome hg38 --cellline K562
-```
-
-### For training and scoring
-```bash
-Training.ipynb Prediction.ipynb
 ```
 
 # Contact us
