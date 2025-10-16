@@ -1,4 +1,4 @@
-![logo](imag/DeepDC logo_20250319.png)
+![logo](imag/DeepDC_logo_20250319.png)
 
 DeepDC, developed by Jialiang Huang's Lab at Xiamen University (XMU) and Teng Fei's Lab at Northeastern University (NEU), is a deep learning-based computational model designed to predict dual-editing efficiency in non-coding regions. It combines a HyenaDNA block and XGBoost to extract epigenomic features and sequence information from each paired sgRNA and predicts editing efficiency.
 
@@ -9,9 +9,15 @@ We also provide a [webserver](https://deepdc.huanglabxmu.com/) for user to desig
 # Run the Source Code:
 
 ## Dependencies
+Python version: 3.8.18
+Pytorch version: 2.4.1
+nvidia-tensorflow:1.15.5+nv23.03
+xgboost: 2.1.4
 
 ## Install
-
+git clone https://github.com/xmuhuanglab/DeepDC.git
+conda env create -f cp38tf1.yml
+conda activate cp38tf1
 
 ## Run the demo datasets
 Here, we provide training and test demo input to showcase the DeepDC workflow:
@@ -22,6 +28,9 @@ Here, we provide training and test demo input to showcase the DeepDC workflow:
 | chr12       | 91000  | 91500 |
 
 ### Preparation of input (Feature processing)
+```bash
+DataProcess.ipynb
+```
 This Jupyter notebook is used to collect information related to the target fragment.: 
 1. pgRNA: Includes paired gRNA sequences and PAM information.
 2. Epigenetic Features: Examples include DNase, ATAC, H3K4me3, and H3K27ac.
