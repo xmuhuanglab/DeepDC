@@ -6,7 +6,7 @@ DeepDC, developed by Jialiang Huang's Lab at Xiamen University (XMU) and Teng Fe
 
 We also provide a [webserver](https://deepdc.huanglabxmu.com/) for user to design pgRNA and scoring.
 
-# Run the Source Code:
+# Run the Source Code
 
 ## Dependencies
 ```bash
@@ -44,7 +44,13 @@ This Jupyter notebook is used to collect information related to the target fragm
 4. gRNA Efficiency: Predicted by DeepCpf1, DeepCRISPR, CRISPRedit, and Ruleset2.
 5. Fragment Score: Calculated using the HyenaDNA scoring system.
 
-### For training and scoring:
+### Batch design using scripts
+```bash
+python DeepDC_3_and_1_w.py --oc ./result/test1/ --region chr11:5290000-5292000 --genome hg38 --cellline K562
+python DeepDC_3_and_1_b.py --oc ./result/test2/ --region data/test.bed --genome hg38 --cellline K562
+```
+
+### For training and scoring
 ```bash
 Training.ipynb Prediction.ipynb
 ```
