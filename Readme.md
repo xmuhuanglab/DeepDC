@@ -27,9 +27,11 @@ conda activate cp38tf1
 Here, we provide training and test demo input to showcase the DeepDC workflow:
 | Chromosome | Start | End |
 |:-----------:|:------:|:---:|
-| chr1        | 10000  | 10500 |
-| chr7        | 56000  | 56500 |
-| chr12       | 91000  | 91500 |
+| chr11       | 5278000  | 5280000 |
+| chr11       | 5280000  | 5282000 |
+| chr11       | 5284000  | 5287000 |
+| chr11       | 5288000  | 5292000 |
+| chr11       | 5292000  | 5296000 |
 
 ### Preparation of input (Feature processing)
 ```bash
