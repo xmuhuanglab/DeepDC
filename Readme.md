@@ -19,7 +19,7 @@ xgboost: 2.1.4
 ## Install
 ```bash
 git clone https://github.com/xmuhuanglab/DeepDC.git  
-conda env create -f cp38tf1.yml  
+conda env create -f cp38tf1.yaml  
 conda activate cp38tf1
 ``` 
 
