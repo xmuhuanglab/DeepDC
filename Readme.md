@@ -10,7 +10,7 @@ We also provide a [webserver](https://deepdc.huanglabxmu.com/) for user to desig
 
 ## Dependencies
 ```bash
-Python version: 3.8.18  
+Python version: 3.8.20  
 Pytorch version: 2.4.1  
 nvidia-tensorflow:1.15.5+nv23.03  
 xgboost: 2.1.4
@@ -19,7 +19,7 @@ xgboost: 2.1.4
 ## Install
 ```bash
 git clone https://github.com/xmuhuanglab/DeepDC.git  
-conda env create -f cp38tf1.yaml  
+bash env.sh  
 conda activate cp38tf1
 ``` 
 
