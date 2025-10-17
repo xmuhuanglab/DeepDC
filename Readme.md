@@ -23,6 +23,11 @@ bash env.sh
 conda activate cp38tf1
 ``` 
 
+## Open Jupyter Notebook
+```bash
+jupyter notebook
+```
+
 ## Run the demo datasets
 Here, we provide training and test demo input to showcase the DeepDC workflow:
 | Chromosome | Start | End |
