@@ -12,6 +12,7 @@ pip install xgboost==2.1.4
 pip install biopython==1.70
 pip install nvidia-pyindex
 pip install nvidia-tensorflow
+conda install cudatoolkit=10.1 -y
 conda install -c nvidia nccl=2.8 -y
 pip install torch==2.4.1
 pip install torchvision
