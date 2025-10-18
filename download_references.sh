@@ -1,5 +1,4 @@
 #!/bin/bash
-#!/bin/bash
 
 mkdir genome_ref
 cd genome_ref
