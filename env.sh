@@ -1,9 +1,9 @@
 #!/bin/bash
 
-conda create -n cp38tf1_1 python=3.8 -y
+conda create -n cp38tf1 python=3.8 -y
 conda init bash
 source ~/.bashrc
-conda activate cp38tf1_1
+conda activate cp38tf1
 pip install pandas tqdm pyBigWig pyfaidx omegaconf
 pip install dm-sonnet==1.11
 pip install tf-slim==1.1.0
@@ -18,7 +18,7 @@ pip install torchvision
 pip install einops==0.8.1
 pip install transformers==4.26.1
 pip install jupyter ipykernel
-python -m ipykernel install --user --name cp38tf1_1
+python -m ipykernel install --user --name cp38tf1
 
 SCRIPT_DIR=$(dirname "$(realpath "$0")")
 rm -f $SCRIPT_DIR/chopchop/config.json
