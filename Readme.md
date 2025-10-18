@@ -1,6 +1,6 @@
-![logo](imag/DeepDC_logo_20250319.png)
+![logo](imag/DeepDC_logo_20251015.png)
 
-DeepDC, developed by Jialiang Huang's Lab at Xiamen University (XMU) and Teng Fei's Lab at Northeastern University (NEU), is a deep learning-based computational model designed to predict dual-editing efficiency in non-coding regions. It combines a HyenaDNA block and XGBoost to extract epigenomic features and sequence information from each paired sgRNA and predicts editing efficiency.
+DeepDC, developed by Jialiang Huang's Lab at Xiamen University (XMU) and Teng Fei's Lab at Northeastern University (NEU), is a deep learning model for predicting pgRNA activity on dual-cut fragment deletion by dual-SpCas9. It combines a HyenaDNA block and XGBoost to extract epigenomic features and sequence information from each paired sgRNA and predicts editing efficiency.
 
 ![workflow](imag/workflow.png)
 
