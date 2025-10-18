@@ -17,3 +17,19 @@ pip install torch==2.4.1
 pip install torchvision
 pip install jupyter ipykernel
 python -m ipykernel install --user --name cp38tf1
+
+SCRIPT_DIR=$(dirname "$(realpath "$0")")
+rm -f $SCRIPT_DIR/chopchop/config.json
+echo "{" > $SCRIPT_DIR/chopchop/config.json
+echo "  \"PATH\": {" >> $SCRIPT_DIR/chopchop/config.json
+echo "    \"PRIMER3\": \"$SCRIPT_DIR/chopchop/primer3_core\"," >> $SCRIPT_DIR/chopchop/config.json
+echo "    \"BOWTIE\": \"$SCRIPT_DIR/chopchop/bowtie/bowtie\"," >> $SCRIPT_DIR/chopchop/config.json
+echo "    \"TWOBITTOFA\": \"$SCRIPT_DIR/chopchop/twoBitToFa\"," >> $SCRIPT_DIR/chopchop/config.json
+echo "    \"TWOBIT_INDEX_DIR\": \"$SCRIPT_DIR/genome_ref\"," >> $SCRIPT_DIR/chopchop/config.json
+echo "    \"BOWTIE_INDEX_DIR\": \"$SCRIPT_DIR/genome_ref\"," >> $SCRIPT_DIR/chopchop/config.json
+echo "    \"ISOFORMS_INDEX_DIR\": \"\"," >> $SCRIPT_DIR/chopchop/config.json
+echo "    \"ISOFORMS_MT_DIR\": \"\"," >> $SCRIPT_DIR/chopchop/config.json
+echo "    \"GENE_TABLE_INDEX_DIR\": \"\"" >> $SCRIPT_DIR/chopchop/config.json
+echo "  }," >> $SCRIPT_DIR/chopchop/config.json
+echo "  \"THREADS\": 4" >> $SCRIPT_DIR/chopchop/config.json
+echo "}"  >> $SCRIPT_DIR/chopchop/config.json
