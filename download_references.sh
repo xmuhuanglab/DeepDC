@@ -5,7 +5,8 @@ cd genome_ref
 wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_49/GRCh38.p14.genome.fa.gz -O hg38.fa.gz
 wget http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.2bit
 gunzip hg38.fa.gz
-python ../chopchop/bowtie/bowtie-build -f hg38.fa hg38 --threads 4
+chmod -R 755 ../chopchop/bowtie/
+../chopchop/bowtie/bowtie-build -f ./hg38.fa hg38 --threads 4
 cd ..
 
 mkdir -p epigenome_ref
