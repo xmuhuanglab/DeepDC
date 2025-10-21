@@ -48,11 +48,11 @@ bash download_references.sh
 DataProcess.ipynb
 ```
 This Jupyter notebook is used to collect information related to the target fragment.: 
-1. pgRNA: Includes paired gRNA sequences and PAM information.
+1. pgRNA: Includes pgRNA sequences and their PAM information.
 2. Epigenetic Features: Examples include DNase, ATAC, H3K4me3, and H3K27ac.
-3. Deleted fragment length: Distance between paired sgRNAs is limited to 50–200 bp.
+3. Deleted fragment length: Distance between pgRNA is limited to 50–200 bp.
 4. GC Content: Percentage of guanine and cytosine nucleotides in the deleted fragment sequence.
-5. gRNA Efficiency: Predicted by DeepCpf1, DeepCRISPR, CRISPRedit, and Ruleset2.
+5. sgRNA Efficiency: Predicted by DeepSpCas9, DeepCRISPR, CRISPRedict, and Ruleset2.
 6. Fragment Score: Calculated using the HyenaDNA scoring system.
 
 ### For training and scoring
