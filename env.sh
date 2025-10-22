@@ -35,3 +35,7 @@ echo "    \"GENE_TABLE_INDEX_DIR\": \"\"" >> $SCRIPT_DIR/chopchop/config.json
 echo "  }," >> $SCRIPT_DIR/chopchop/config.json
 echo "  \"THREADS\": 4" >> $SCRIPT_DIR/chopchop/config.json
 echo "}"  >> $SCRIPT_DIR/chopchop/config.json
+
+chmod -R 755 $SCRIPT_DIR/chopchop/bowtie
+chmod 755 $SCRIPT_DIR/twoBitToFa
+chmod 755 $SCRIPT_DIR/primer3_core
