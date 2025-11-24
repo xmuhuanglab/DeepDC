@@ -70,3 +70,8 @@ python DeepDC_3_and_1_b.py --oc ./result/test2/ --region data/test.bed --genome 
 If you have any further questions or encounter any issues, please feel free to contact us:
 - [Liquan Lin: 21620241153548@stu.xmu.edu.cn](mailto:21620241153548@stu.xmu.edu.cn)
 - [Shijie Luo: 24520230157443@xmu.edu.cn](mailto:24520230157443@xmu.edu.cn)
+
+# Citation
+Benchmarking Perturbation Tools for the Noncoding Genome  
+Han Zhang, Shijie Luo, Xiaofeng Wang, Liquan Lin, Ruipu Liang, Chunge Zhong, Yunhan Zhang, Wenchang Zhao, Zhisong Chen, Xiaoya Liu, Feng Chen, Ning Sun, Jialiang Huang, Teng Fei  
+bioRxiv 2025.10.21.683665; doi: [https://doi.org/10.1101/2025.10.21.683665](https://doi.org/10.1101/2025.10.21.683665)
