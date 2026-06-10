@@ -4,7 +4,7 @@ DeepDC, developed by Jialiang Huang's Lab at Xiamen University (XMU) and Teng Fe
 
 ![workflow](imag/workflow.png)
 
-We also provide a [webserver](https://deepdc.huanglabxmu.com/) for user to design pgRNA and scoring.
+We also provide a [webserver](https://deepdc.huanglabxmu.com/) for user to design pgRNA and scoring. For more details, you can see our manuscript or [detials](detail/details.md)
 
 # Run the Source Code
 
