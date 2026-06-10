@@ -1,4 +1,4 @@
-#1. DeepDC Model  
+# 1. DeepDC Model  
 DeepDC is a deep learning-based computational model designed to predict the dual-cut fragment editing efficiency of dual-SpCas9 system. To construct DeepDC, we used XGBoost as the underlying architecture, and incorporated gRNA performance score and multiple features for the model building:
 
 |Feature|Description|
