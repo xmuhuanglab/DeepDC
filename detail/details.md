@@ -30,8 +30,8 @@ Each study reported log-fold change (LFC) or an equivalent perturbation readout.
 
 4. Model evaluation
 A comparsion with four fine tuned previous models was done:
-![picture](detail/evaluation.png)
+![picture](evaluation.png)
 
 5. Computational costs
 Model training was performed on an NVIDIA A30 GPU with 24 GB of memory for HyenaDNA fine-tuning, while the DeepDC model was trained on a server equipped with 48 Intel Xeon Silver 4310 CPUs running at 2.10 GHz. To assess runtime performance, a case study was conducted using 2,500 samples over 200 training epochs:
-![picture1](detail/Time_cost.png)
+![picture1](Time_cost.png)
